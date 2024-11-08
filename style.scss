@@ -1,0 +1,74 @@
+body {
+    
+}
+
+.profile-card {
+    background-color: #3498db;
+    width: 200px;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    animation: slideIn 1s ease-out;
+    
+    &__image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    &__title {
+        color: white;
+        margin: 15px 0;
+    }
+    
+    &__description {
+        &-main {
+            font-weight: bold;
+            color: white;
+        }
+        
+        &-secondary {
+            color: white;
+        }
+    }
+    
+    &__button {
+        background-color: white;
+        padding: 15px;
+        cursor: pointer;
+        position: relative;
+        transition: width 1s ease;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #3498db;
+            transition: width 1s ease;
+        }
+        
+        &:hover {
+            width: 80%;
+            
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
